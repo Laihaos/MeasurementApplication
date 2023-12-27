@@ -8,45 +8,55 @@
     tools:context=".DatePickerDialogActivity">
 
 
-    <com.ycuwq.datepicker.date.DatePicker
-
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:id="@+id/dayPicker_dialog"
+    <DatePicker
+        android:id="@+id/date_picker"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </com.ycuwq.datepicker.date.DatePicker>
+        android:datePickerMode="spinner"
+        android:minDate="01/01/1900"
+        android:maxDate="01/01/2100"
+        android:spinnersShown="true"
+        android:calendarViewShown="false"
+        android:firstDayOfWeek="2"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints" />
 
-    <com.ycuwq.datepicker.time.HourAndMinutePicker
-        android:id="@+id/hour_min_picker_dialog"
+
+    <TimePicker
+        android:id="@+id/time_picker"
+        android:timePickerMode="spinner"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/dayPicker_dialog"
+        app:layout_constraintTop_toBottomOf="@id/date_picker"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         />
 
-    <Button
-        android:id="@+id/queding"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="确定"
-        android:onClick="goTomainActivity"
-        app:layout_constraintTop_toBottomOf="@id/hour_min_picker_dialog"
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="471dp"
-        tools:ignore="MissingConstraints" />
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/time_picker"
+        tools:ignore="MissingConstraints"
+        android:gravity="center_horizontal"
+        tools:layout_editor_absoluteX="75dp">
 
-    <Button
-        android:id="@+id/quxiao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:onClick="goTomainActivity"
-        android:text="取消"
-        app:layout_constraintStart_toEndOf="@+id/queding"
-        app:layout_constraintTop_toBottomOf="@id/hour_min_picker_dialog"
-        tools:ignore="MissingConstraints" />
+        <Button
+            android:id="@+id/queding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="goTomainActivity"
+            android:text="确定"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/quxiao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="84dp"
+            android:onClick="breakmainActivity"
+            android:text="取消"
+            tools:ignore="MissingConstraints" />
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

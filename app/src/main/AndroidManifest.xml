@@ -6,9 +6,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@xml/ic_launcher"
+        android:icon="@drawable/aperture"
         android:label="@string/app_name"
-        android:roundIcon="@xml/ic_launcher_round"
+        android:roundIcon="@drawable/aperture"
         android:supportsRtl="true"
         android:theme="@style/Theme.MeasurementApplication">
         <activity
@@ -23,6 +23,10 @@
         <activity
             android:name=".DatePickerDialogActivity"
             android:label="日期时间滚轮选择器" />
+        <activity
+            android:name=".Natal_chart"
+            android:label="命盘" />
+
     </application>
 
 </manifest>

@@ -3,19 +3,17 @@ package com.example.measurementapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.nlf.calendar.Lunar;
-import com.ycuwq.datepicker.date.DayPicker;
-import com.ycuwq.datepicker.date.MonthPicker;
-import com.ycuwq.datepicker.date.YearPicker;
-import com.ycuwq.datepicker.date.YearPicker.OnYearSelectedListener;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements OnYearSelectedListener {
+public class MainActivity extends AppCompatActivity {
 
     public static int year = 0;
     public static int month = 0;
@@ -24,16 +22,20 @@ public class MainActivity extends AppCompatActivity implements OnYearSelectedLis
 
     public static int minute = 0;
 
+    public EditText editText;
+    public Lunar date;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        EditText editText = (EditText) findViewById(R.id.birthday);
+        editText = (EditText) findViewById(R.id.birthday);
 
         if (year != 0) {
-            editText.setText(String.valueOf(year) + "年" + String.valueOf(month) + "月" + String.valueOf(day) + "日 " + String.valueOf(hour) +":"+((minute < 10) ? String.valueOf(0)+String.valueOf(+minute) : String.valueOf(minute)) );
-            Lunar date = new Lunar(year,month,day,hour,minute,0);
+            editText.setText(String.valueOf(year) + "年" + String.valueOf(month) + "月" + String.valueOf(day) + "日 " + String.valueOf(hour) + ":" + ((minute < 10) ? String.valueOf(0) + String.valueOf(+minute) : String.valueOf(minute)));
+            date = new Lunar(year, month, day, hour, minute, 0);
             Log.d("date", String.valueOf(date.toFullString()));
         }
 
@@ -56,12 +58,21 @@ public class MainActivity extends AppCompatActivity implements OnYearSelectedLis
     }
 
     public void goToDatePickerDialogActivity(View view) {
+
         DatePickerDialogActivity.actionActivity(this);
+
     }
 
-    @Override
-    public void onYearSelected(int year) {
-        Log.d("onYearSelected", String.valueOf(year));
+    public void goToNatal_chartActivity(View view) {
+
+        String birthday = String.valueOf(editText.getText());
+
+        if (TextUtils.isEmpty(birthday)) {
+            Toast.makeText(this, "请填写生日信息", Toast.LENGTH_SHORT).show();
+        } else {
+            Natal_chart.actionActivity(this);
+        }
     }
+
 }
 

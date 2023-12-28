@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="20dp"
+    android:layout_gravity="center_horizontal"
+    android:rowCount="4"
+    android:columnCount="4"
+    >
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_row="0"
+        android:text="己"
+        android:layout_column="0"/>
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_row="0"
+        android:text="午"
+        android:layout_column="1"/>
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_row="0"
+        android:text="未"
+        android:layout_column="2"/>
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_row="0"
+        android:text="申"
+        android:layout_column="3"/>
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_row="1"
+        android:text="辰"
+        android:layout_column="0"/>
+</GridLayout>

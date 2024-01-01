@@ -36,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
         if (year != 0) {
             editText.setText(String.valueOf(year) + "年" + String.valueOf(month) + "月" + String.valueOf(day) + "日 " + String.valueOf(hour) + ":" + ((minute < 10) ? String.valueOf(0) + String.valueOf(+minute) : String.valueOf(minute)));
             date = new Lunar(year, month, day, hour, minute, 0);
-            Log.d("date", String.valueOf(date.toFullString()));
+//            Log.d("date", String.valueOf(date.getSolar().toFullString()));
+
         }
 
 //        Log.d("date1", String.valueOf(date.getTimeZhi()));
@@ -70,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         if (TextUtils.isEmpty(birthday)) {
             Toast.makeText(this, "请填写生日信息", Toast.LENGTH_SHORT).show();
         } else {
-            Natal_chart.actionActivity(this);
+            Natal_chart.actionActivity(this,date,month,day);
         }
     }
 

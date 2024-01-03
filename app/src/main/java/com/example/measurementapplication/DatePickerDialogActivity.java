@@ -46,10 +46,12 @@ public class DatePickerDialogActivity extends AppCompatActivity  {
 
     private Button quedingConfir;
     private Button quxiaoConfir;
+    public static String name;
 
 
 
-    public static void actionActivity(Context context) {
+    public static void actionActivity(Context context,String Name) {
+        name=Name;
         Intent intent = new Intent(context, DatePickerDialogActivity.class);
         context.startActivity(intent);
     }
@@ -75,12 +77,12 @@ public class DatePickerDialogActivity extends AppCompatActivity  {
         int hour = timePicker.getHour();
         int minute = timePicker.getMinute();
 
-        MainActivity.actionActivity(this,year,month+1,day,hour,minute);
+        MainActivity.actionActivity(this,year,month+1,day,hour,minute,name);
     }
 
     public void breakmainActivity(View view) {
 
-        MainActivity.actionActivity(this,0,0,0,0,0);
+        MainActivity.actionActivity(this,0,0,0,0,0,"");
     }
 
 

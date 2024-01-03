@@ -8,13 +8,14 @@
     android:paddingLeft="16dp"
     android:paddingTop="160dp"
     android:paddingRight="16dp"
+    android:background="@drawable/beijing"
     android:paddingBottom="16dp"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFEBCD"
+        android:background="@drawable/ic_launcher_foreground"
         android:orientation="vertical"
         android:padding="10dp">
 
@@ -22,9 +23,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/ic_launcher_foregroundzi"
-            android:gravity="center_horizontal"
+            android:gravity="center"
             android:padding="10dp"
-            android:text="请输入出生信息"
+            android:text="请输入生日信息"
             android:textColor="#FFFFFF"
             android:textSize="20dp"
             android:textStyle="bold" />
@@ -41,6 +42,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+
                 android:text="姓名：" />
 
             <EditText
@@ -65,6 +69,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
+
                 android:text="性别：" />
 
             <RadioGroup
@@ -78,11 +85,15 @@
                     android:id="@+id/male"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="20dp"
+
                     android:checked="true"
                     android:text="男" />
 
                 <RadioButton
                     android:id="@+id/female"
+                    android:textSize="20dp"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="女" />
@@ -106,18 +117,20 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="14dp"
                 android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp"
                 android:text="生日：" />
 
             <EditText
                 android:id="@+id/birthday"
-                android:layout_width="260dp"
+                android:layout_width="240dp"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/RelativeLayout1"
                 android:inputType="date" />
 
             <Button
                 android:id="@+id/btn_date_picker_dialog"
-                android:layout_width="20dp"
+                android:layout_width="40dp"
                 android:layout_height="50dp"
                 android:layout_alignParentRight="true"
                 android:layout_toRightOf="@id/birthday"
